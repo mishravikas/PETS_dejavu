@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <title>History Sniffing|Demo|PETS 2021</title>
+
+  <!-- CSS files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'app/main.css' %}">
+
+
+
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+
+  
+  <a href="/" class="author_name">History sniffing</a>
+
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "/" >
+  Home
+</a>
+
+
+
+<div id="post">
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Tracking_using_Cache_Fingerprinting_0"></a>History sniffing using Cache Fingerprinting</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="4">This page shows an application of browser-cache-abuse for history sniffing presented in our paper. The demo relies on the Tranco top 100 websites and tries to detect if and when those sites were visited by you.<br>
+The following table lists the websites along with their tranco list in one column and the Date when that particular website was visited on the Date column.
+<table class="table table-striped table-bordered" id="timingTable">
+<thead>
+<tr>
+<th>Tranco Rank</th>
+<th>Website</th>
+<th>Visited On</th>
+<th>Vulnerability Window</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h1 class="code-line" data-line-start=12 data-line-end=13 ><a id="Instructions_12"></a>Instructions</h1>
+<ul>
+<li class="has-line-data" data-line-start="14" data-line-end="15">Verify if the Dates shown in the table correspond with the actual time of visit.</li>
+<li class="has-line-data" data-line-start="14" data-line-end="15">Table will display current timestamp for the websites which have not been visited before.</li>
+<li class="has-line-data" data-line-start="15" data-line-end="16">Open the demo page in incognito mode and you should see the current timestamps</li>
+<li class="has-line-data" data-line-start="16" data-line-end="17">Closing the browser/tab and opening the page again should not change the timestamps</li>
+<li class="has-line-data" data-line-start="17" data-line-end="18">This demo relies on the browser cache so make sure you do not flush your cache before reloading the page.</li>
+<li class="has-line-data" data-line-start="18" data-line-end="20">If your dev tools is open, make sure <code>Disable cache</code> is not ticked.</li>
+</ul>
+<p class="has-line-data" data-line-start="20" data-line-end="23">This demo has been tested on Firefox, Chrome, Brave, Safari desktop and mobile browsers.<br>
+In <code>Firefox</code>, reloading the page by pressing <code>Ctrl+R</code> or pressing on the reload button next to the address bar will not work.<br>
+Try clicking on the adress bar and hitting the <code>enter/return</code> key or closing the tab/browser and reopening the demo page again.</p>
+
+</div>
+  
+</div>
+
+
+
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="{% static 'app/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="/sniffScript.js"></script>
+
+<script type="text/javascript">
+  function insertInTable(Datesdata){
+    if(Object.keys(Datesdata).length != 0){
+      for (var web in Datesdata) {
+        // console.log(web+Datesdata[web])
+	      $(timingTable).find('tbody').append( "<tr><td>" + Datesdata[web]['rank'] +
+                                             "</td> <td>" + web +
+                                             "</td><td>"+ Datesdata[web]['date'] +
+                                             "</td><td>"+ Datesdata[web]['vw'] +
+                                             "</td></tr>" );
+      }
+    }
+  }
+</script>
+</body>
+</html>
