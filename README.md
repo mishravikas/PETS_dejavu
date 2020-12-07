@@ -7,10 +7,11 @@ Paper to appear at PETS '21 by Vikas Mishra, Pierre Laperdrix, Walter Rudametkin
 
 - Install virtualenv
 ```bash
-    pip install virtualenv
-    virtualenv --help
+    pip3 install virtualenv
 ```
-    
+You can check that it is correctly installed by running
+```virtualenv --help```.
+   
 - Create and activate a virtualenv
 ```bash
 	virtualenv dejavu
@@ -29,6 +30,8 @@ Paper to appear at PETS '21 by Vikas Mishra, Pierre Laperdrix, Walter Rudametkin
 - The PoC includes a sample resource and more can be added from the admin panel which can be accessed at http://localhost:8000/admin with username as `admin` and password as `dejavupets`
 This PoC includes both tracking and history sniffing demos and both can be tested by visiting
 http://localhost:8000 and following the instructions mentioned on the page.
+If you want to change or add new resources, the `Resources` table has the link to the element tested for the **Tracking** page.
+The `Links` table  contains the different links that are tested for the **History sniffing** page.
 
 
 
