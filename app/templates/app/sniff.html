@@ -52,7 +52,15 @@
 
 <div id="post">
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Tracking_using_Cache_Fingerprinting_0"></a>History sniffing using Cache Fingerprinting</h1>
-<p class="has-line-data" data-line-start="2" data-line-end="4">This page shows an application of browser-cache-abuse for history sniffing presented in our paper. The demo relies on the Tranco top 100 websites and tries to detect if and when those sites were visited by you.<br>
+
+{% if is_firefox == True %}
+<div class="alert alert-danger" role="alert">
+In <code>Firefox</code>, reloading the page by pressing <code>Ctrl+R</code> or pressing on the reload button next to the address bar will not work.<br>
+Try clicking on the adress bar and hitting the <code>enter/return</code> key or closing the tab/browser and reopening the demo page again.</p>
+</div>
+{% endif %}
+
+<p class="has-line-data" data-line-start="2" data-line-end="4">This page shows an application of browser-cache-abuse for history sniffing presented in our paper. The demo checks one of the 6 websites from Tranco Top 100 listed below and tries to detect if and when those sites were visited by you.<br>
 The following table lists the websites along with their tranco list in one column and the Date when that particular website was visited on the Date column.
 <table class="table table-striped table-bordered" id="timingTable">
 <thead>

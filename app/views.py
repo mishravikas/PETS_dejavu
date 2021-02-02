@@ -32,7 +32,11 @@ def serveCf(request):
 
 
 def index(request):
-	return render(request,'app/index.html')
+	is_firefox = False
+	print(request.META['HTTP_USER_AGENT'])
+	if 'Firefox' in request.META['HTTP_USER_AGENT'] or 'firefox' in request.META['HTTP_USER_AGENT']:
+		is_firefox = True
+	return render(request,'app/index.html',{'is_firefox':is_firefox})
 
 def getDates(request):
 	retVal = {}
@@ -138,8 +142,16 @@ def normalize_seconds(seconds: int) -> tuple:
     return out.rstrip().rstrip(',')
 
 def track(request):
-	return render(request,'app/track.html')
+	is_firefox = False
+	print(request.META['HTTP_USER_AGENT'])
+	if 'Firefox' in request.META['HTTP_USER_AGENT'] or 'firefox' in request.META['HTTP_USER_AGENT']:
+		is_firefox = True
+	return render(request,'app/track.html',{'is_firefox':is_firefox})
 
 def sniff(request):
-	return render(request, 'app/sniff.html')
+	is_firefox = False
+	print(request.META['HTTP_USER_AGENT'])
+	if 'Firefox' in request.META['HTTP_USER_AGENT'] or 'firefox' in request.META['HTTP_USER_AGENT']:
+		is_firefox = True
+	return render(request, 'app/sniff.html',{'is_firefox':is_firefox})
 

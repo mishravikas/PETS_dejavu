@@ -52,6 +52,13 @@
 
 <div id="post">
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Tracking_using_Cache_Fingerprinting_0"></a>Tracking using Cache Fingerprinting</h1>
+{% if is_firefox == True %}
+<div class="alert alert-danger" role="alert">
+In <code>Firefox</code>, reloading the page by pressing <code>Ctrl+R</code> or pressing on the reload button next to the address bar will not work.<br>
+Try clicking on the adress bar and hitting the <code>enter/return</code> key or closing the tab/browser and reopening the demo page again.</p>
+</div>
+{% endif %}
+
 <font size="+10"><center><div class="alert alert-success" role="alert">Your ID: <span id="personID"></span></div></center> </font>
 <p class="has-line-data" data-line-start="2" data-line-end="4">This page shows an application of cache-fingerprinting by building a stable identifier for each browser which can be used for tracking a user.<br>
 

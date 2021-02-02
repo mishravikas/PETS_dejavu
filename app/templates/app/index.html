@@ -45,6 +45,12 @@
 
 <div id="post">
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Tracking_using_Cache_Fingerprinting_0"></a>Déjà vu: Abusing Browser Cache Headers to Identify and Track Online Users</h1>
+{% if is_firefox == True %}
+<div class="alert alert-danger" role="alert">
+In <code>Firefox</code>, reloading the page by pressing <code>Ctrl+R</code> or pressing on the reload button next to the address bar will not work.<br>
+Try clicking on the adress bar and hitting the <code>enter/return</code> key or closing the tab/browser and reopening the demo page again.</p>
+</div>
+{% endif %}
 
 <p class="has-line-data" data-line-start="2" data-line-end="4">This page hosts demos for the two applications of browser-cache-abuse presented in the paper, namely:Tracking and History Sniffing<br>
 
@@ -59,8 +65,6 @@
 <li class="has-line-data" data-line-start="18" data-line-end="20">If your dev tools is open, make sure <code>Disable cache</code> is not ticked.</li>
 </ul>
 <p class="has-line-data" data-line-start="20" data-line-end="23">This demo has been tested on Firefox, Chrome, Brave, Safari desktop and mobile browsers.<br>
-In <code>Firefox</code>, reloading the page by pressing <code>Ctrl+R</code> or pressing on the reload button next to the address bar will not work.<br>
-Try clicking on the adress bar and hitting the <code>enter/return</code> key or closing the tab/browser and reopening the demo page again.</p>
 </div>
   
 </div>
