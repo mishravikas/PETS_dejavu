@@ -3,6 +3,8 @@
 Paper to appear at PETS '21 by Vikas Mishra, Pierre Laperdrix, Walter Rudametkin and Romain Rouvoy
 
 # Instructions
+- This demo requires Python 3 or higher
+
 - Clone the repo
 
 - Install virtualenv
